@@ -17,7 +17,6 @@ public class DefensiveComparator implements Comparator<Player> {
         if (o2 == null) {
             return 1;
         }
-
         return Integer.compare(o1.getStats().getDefensiveInvolvements(), o2.getStats().getDefensiveInvolvements());
     }
 }

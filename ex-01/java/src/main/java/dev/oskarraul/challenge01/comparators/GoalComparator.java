@@ -17,7 +17,6 @@ public class GoalComparator implements Comparator<Player> {
         if (o2 == null) {
             return 1;
         }
-
         return Integer.compare(o1.getStats().getGoals(), o2.getStats().getGoals());
     }
 }

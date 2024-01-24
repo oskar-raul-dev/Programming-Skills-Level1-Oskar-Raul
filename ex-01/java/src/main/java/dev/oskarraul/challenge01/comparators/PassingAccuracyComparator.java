@@ -17,7 +17,6 @@ public class PassingAccuracyComparator implements Comparator<Player> {
         if (o2 == null) {
             return 1;
         }
-
         return Integer.compare(o1.getStats().getPassingAccuracy(), o2.getStats().getPassingAccuracy());
     }
 }

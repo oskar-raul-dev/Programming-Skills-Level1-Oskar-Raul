@@ -25,10 +25,7 @@ import java.util.Scanner;
  */
 @Getter
 public class Main {
-    // Main program
     public static void main(String[] args) {
-        // try to load initial catalog
-        // from JSON file
         System.out.println("Loading player Database from JSON...");
         final List<Player> playersList = loadDatabaseFromJson();
         if (playersList == null) {
@@ -37,9 +34,7 @@ public class Main {
         }
         System.out.println("JSON database Loaded.");
         final Scanner scanner = new Scanner(System.in);
-        // start main menu cycle
         createCoachAssistantApp(scanner, playersList).mainMenuCycle();
-        // after finish close all resources
         scanner.close();
     }
 
@@ -60,8 +55,6 @@ public class Main {
     }
 
     private static CoachAssistantApp createCoachAssistantApp(Scanner scanner, List<Player> playerDatabase) {
-        // init base components
-        // via dependency injection on constructor
         ConsoleDataReader consoleReader = new ConsoleDataReader(scanner);
         PlayersDatabaseManager databaseManager = new PlayersDatabaseManager(playerDatabase);
         MaximumCalculator maximumCalculator = new MaximumCalculator(
@@ -71,8 +64,6 @@ public class Main {
                 new GoalComparator(),
                 new PassingAccuracyComparator(),
                 new SpeedComparator());
-
-        // init main application class
         CoachAssistantApp app = new CoachAssistantApp(
                 consoleReader,
                 new MenuOptionRunner(consoleReader),

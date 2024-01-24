@@ -9,9 +9,7 @@ import java.util.Scanner;
  * in command line console
  */
 public class ConsoleDataReader {
-
     private final Scanner scanner;
-
     public ConsoleDataReader(Scanner scanner) {
         this.scanner = scanner;
     }
@@ -88,14 +86,5 @@ public class ConsoleDataReader {
                 System.out.println("Invalid value. You must input an integer value. Try again");
             }
         }
-    }
-
-    public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
-        ConsoleDataReader reader = new ConsoleDataReader(s);
-
-        int n = reader.readIntegerZeroOrPositive("Select the option");
-        System.out.println("Selected option: " + n);
-
     }
 }

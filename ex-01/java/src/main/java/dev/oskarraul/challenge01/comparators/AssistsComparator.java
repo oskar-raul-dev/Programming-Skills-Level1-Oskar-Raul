@@ -17,7 +17,6 @@ public class AssistsComparator implements Comparator<Player> {
         if (o2 == null) {
             return 1;
         }
-
         return Integer.compare(o1.getStats().getAssists(), o2.getStats().getAssists());
     }
 }

@@ -5,9 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import dev.oskarraul.challenge01.domain.Player;
 import lombok.AllArgsConstructor;
 
-import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.Reader;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -16,13 +14,11 @@ import java.util.List;
 public class JsonDatabaseReader {
     private ObjectMapper objectMapper;
 
-    public  List<Player> loadInitialCatalog(Reader jsonReader) throws IOException, URISyntaxException {
+    public List<Player> loadInitialCatalog(Reader jsonReader) throws IOException, URISyntaxException {
         return loadPlayersDatabase(jsonReader);
     }
 
     private List<Player> loadPlayersDatabase(Reader jsonReader) throws IOException {
-        // Compuound ListType for json map to List with a specific type
-        // List<Player>
         final JavaType listType = objectMapper
                 .getTypeFactory()
                 .constructCollectionType(List.class, Player.class);

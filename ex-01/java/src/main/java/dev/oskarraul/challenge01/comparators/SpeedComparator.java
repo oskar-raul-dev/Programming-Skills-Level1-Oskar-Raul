@@ -17,7 +17,6 @@ public class SpeedComparator implements Comparator<Player> {
         if (o2 == null) {
             return 1;
         }
-
         return Integer.compare(o1.getStats().getSpeed(), o2.getStats().getSpeed());
     }
 }
